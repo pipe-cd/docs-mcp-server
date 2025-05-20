@@ -81,16 +81,16 @@ Returns the content of the specified page.
 
 ## Contributing
 
-## Code of Conduct
+### Code of Conduct
 
 PipeCD follows the [CNCF Code of Conduct](https://github.com/cncf/foundation/blob/master/code-of-conduct.md). Please read it to understand which actions are acceptable and which are not.
 
-## Get Involved
+### Get Involved
 
 - Slack: `#pipecd` channel on [CNCF Slack](https://cloud-native.slack.com/) for discussions related to PipeCD development.
 - Community Meeting: Every other Wednesdays. Search on [here](https://www.cncf.io/calendar/).
 
-## Improvements
+### Improvements
 
 - Bug: 
   - Please open an Issue and describe the problem. Or, open a PR with if it's easy one.
