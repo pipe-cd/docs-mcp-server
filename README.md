@@ -54,11 +54,11 @@ Add the following config to your mcp.json.
 }
 ```
 
-## API Specification
+## Tools
 
 ### search_docs
 
-Performs a full-text search on PipeCD documentation.
+Executes a full-text search on PipeCD docs.
 
 - Parameters:
   - `query`: Search keywords (space-separated, AND search)
@@ -67,7 +67,7 @@ Performs a full-text search on PipeCD documentation.
 
 ### read_docs
 
-Returns the content of a specified document.
+Returns the content of the specified page.
 
 - Parameters:
   - `path`: Relative path of the document (after "docs/content/en/")
@@ -81,4 +81,20 @@ Returns the content of a specified document.
 
 ## Contributing
 
-TBD
+## Code of Conduct
+
+PipeCD follows the [CNCF Code of Conduct](https://github.com/cncf/foundation/blob/master/code-of-conduct.md). Please read it to understand which actions are acceptable and which are not.
+
+## Get Involved
+
+- Slack: `#pipecd` channel on [CNCF Slack](https://cloud-native.slack.com/) for discussions related to PipeCD development.
+- Community Meeting: Every other Wednesdays. Search on [here](https://www.cncf.io/calendar/).
+
+## Improvements
+
+- Bug: 
+  - Please open an Issue and describe the problem. Or, open a PR with if it's easy one.
+- Enhancement / Feature Request:
+  - Please open an Issue and discuss there before sending a PR. We cannot accept all requests in some cases.
+- Security issue:
+  - Send an email to [the core maintainers](https://github.com/pipe-cd/pipecd/blob/master/SECURITY.md). **DO NOT report on Issues.**
