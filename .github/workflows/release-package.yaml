@@ -19,6 +19,7 @@ jobs:
           scope: '@pipe-cd'
       - run: npm ci
       - run: npm run build
+      - run: chmod +x dist/main.js
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
