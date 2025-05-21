@@ -1,7 +1,7 @@
 {
-  "name": "@pipe-cd/pipecd-docs-local-mcp-server",
-  "version": "1.0.0",
-  "description": "Local MCP server for PipeCD documentation search",
+  "name": "@pipe-cd/docs-mcp-server",
+  "version": "0.0.1",
+  "description": "Local MCP server for searching PipeCD docs",
   "main": "dist/main.js",
   "scripts": {
     "build": "tsc",
@@ -36,6 +36,6 @@
     "url": "git+https://github.com/pipe-cd/pipecd-docs-local-mcp-server.git"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "@pipe-cd:registry": "https://npm.pkg.github.com"
   }
 }
