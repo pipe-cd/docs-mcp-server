@@ -9,34 +9,7 @@ Documentation is cloned into a temporary directory, and Markdown files are index
 
 ## Usage
 
-### 1. Install
-
-```bash
-git clone https://github.com/pipe-cd/docs-mcp-server.git
-cd docs-mcp-server
-npm install
-```
-
-### 2. Build
-
-```bash
-npm run build
-```
-
-### 3. Start the server
-
-```bash
-npm start
-```
-
-For development mode (run with TypeScript directly):
-```bash
-npm run dev
-```
-
-### 4. Call from a client
-
-#### Cursor
+### Cursor
 
 Add the following config to your mcp.json.
 
@@ -45,9 +18,9 @@ Add the following config to your mcp.json.
   "mcpServers": {
     "pipe-cd.docs-mcp-server": { // Any name
       "type": "stdio",
-      "command": "npm",
+      "command": "npx",
       "args": [
-        "start", "--prefix", "/path/to/docs-mcp-server/"
+        "@pipe-cd/docs-mcp-server@latest"
       ], 
     }
   }
