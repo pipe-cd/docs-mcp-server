@@ -9,7 +9,7 @@ async function main() {
     const server = new McpServer({
         name: 'PipeCDDocsSearch',
         description: 'Search PipeCD docs',
-        version: '0.1.0'
+        version: '0.0.1'
     });
 
     const docsIndexes = await loadDocsFromGitHub();
@@ -21,17 +21,29 @@ async function main() {
     },
         async ({ query, offset, limit }) => {
             const queries = query.toLowerCase().split(" ");
-            const results = docsIndexes.filter(
-                doc => queries.every(query => doc.title.toLowerCase().includes(query)
-                    || doc.content.toLowerCase().includes(query))
+            // 1. prioritize title match
+            const result = docsIndexes.filter(
+                doc => queries.some(query => doc.title.includes(query))
             ).slice(offset, offset + limit);
-            if (results.length === 0) {
+            if (result.length >= limit) {
+                return {
+                    content: [{ type: "text", text: JSON.stringify(result) }],
+                };
+            }
+
+            // 2. if title match was not enough, then content match
+            const byContent = docsIndexes.filter(
+                doc => queries.some(query => doc.content.includes(query))
+            ).slice(offset, offset + (limit - result.length));
+            result.push(...byContent);
+            if (result.length == 0) {
                 return {
                     content: [{ type: "text", text: `No docs for ${query} found in ${docsIndexes.length} pages.` }],
                 };
             }
+
             return {
-                content: [{ type: "text", text: JSON.stringify(results) }],
+                content: [{ type: "text", text: JSON.stringify(result) }],
             };
         }
     );

@@ -57,7 +57,7 @@ export async function loadDocsFromGitHub(): Promise<DocFile[]> {
             const title = extractTitleFromFrontMatter(String(content));
             docFiles.push({
                 path: relativePath,
-                title,
+                title: title.toLowerCase(),
                 content: String(content),
             });
         } catch (error) {
