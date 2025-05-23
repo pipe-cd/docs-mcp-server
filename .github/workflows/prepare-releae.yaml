@@ -1,0 +1,32 @@
+name: Open a PR to prepare a new Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        type: string
+        required: true
+        description: 'New version number. e.g. "0.1.2"'
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24.x'
+      - name: Update version
+        run: VERSION=${{ inputs.version }} npm run prepare-release
+      - name: Create a PR
+        uses: peter-evans/create-pr@v6
+        with:
+          title: "[bot] release ${{ inputs.version }}"
+          commit-message: "[bot] release ${{ inputs.version }}"
+          body: "This PR updates the version to ${{ inputs.version }}."
+          branch: "release-${{ inputs.version }}"
+          base: "main"
+          delete-branch: true
+          labels: "release"
+          signoff: true
+          token: ${{ secrets.GITHUB_TOKEN }}

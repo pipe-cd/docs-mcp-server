@@ -74,3 +74,12 @@ PipeCD follows the [CNCF Code of Conduct](https://github.com/cncf/foundation/blo
   - For new features or big enhancement, basically, please open an Issue and discuss there before sending a PR. We cannot accept all requests in some cases.
 - Security issue:
   - Send an email to [the core maintainers](https://github.com/pipe-cd/pipecd/blob/master/SECURITY.md). **DO NOT report on Issues.**
+
+## Release Flow
+
+1. Run the `prepare-release` workflow with specifing the new version.
+   It will create a PR to update the versions in package.json and ts.
+2. Review the PR and merge it.
+3. Create a Release on GitHub with a new tag.
+   Then, the `release-package` workflow will release a new npm package.
+ 
