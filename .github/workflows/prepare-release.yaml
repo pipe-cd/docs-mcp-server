@@ -11,7 +11,7 @@ on:
         description: 'New version number. e.g. "0.1.2"'
 
 jobs:
-  publish:
+  create-pr:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
