@@ -78,7 +78,7 @@ PipeCD follows the [CNCF Code of Conduct](https://github.com/cncf/foundation/blo
 ## Release Flow
 
 1. Run the `prepare release` workflow with specifing the new version.
-   It will create a PR to update the versions in package.json and ts.
+   It will create a PR to update the version.
 2. Review the PR and merge it.
 3. Create a Release on GitHub with a new tag.
    Then, the `release package` workflow will publish a new npm package.

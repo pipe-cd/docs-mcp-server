@@ -14,8 +14,7 @@
     "format": "biome format --write ./src",
     "lint": "biome lint ./src",
     "check": "biome check --write ./src",
-    "update-version-ts": "sed -i \"s/^const VERSION = .*;$/const VERSION = \\\"$VERSION\\\";/\" src/version.ts",
-    "prepare-release": "npm version $VERSION --no-git-tag-version && VERSION=$VERSION npm run update-version-ts"
+    "prepare-release": "npm version $VERSION --no-git-tag-version"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.12.0",

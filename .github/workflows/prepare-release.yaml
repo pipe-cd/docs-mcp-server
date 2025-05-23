@@ -1,6 +1,6 @@
 name: prepare release
 description: >
-  This workflow creates a PR to update the versions in package.json and ts.
+  This workflow creates a PR to update the versions in package.json.
 
 on:
   workflow_dispatch:
