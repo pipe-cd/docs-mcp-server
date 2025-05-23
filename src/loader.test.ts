@@ -1,39 +1,41 @@
-import { extractTitleFromFrontMatter } from './loader';
+import { extractTitleFromFrontMatter } from "./loader";
 
-describe('extractTitleFromFrontMatter', () => {
-    it('should extract title from front matter', () => {
-        const content = `---
+describe("extractTitleFromFrontMatter", () => {
+	it("should extract title from front matter", () => {
+		const content = `---
 title: "Hello World"
 ---
 
 Content here`;
-        expect(extractTitleFromFrontMatter(content)).toBe('Hello World');
-    });
+		expect(extractTitleFromFrontMatter(content)).toBe("Hello World");
+	});
 
-    it('should return empty string when no title is found', () => {
-        const content = `---
+	it("should return empty string when no title is found", () => {
+		const content = `---
 description: "No title here"
 ---
 
 Content here`;
-        expect(extractTitleFromFrontMatter(content)).toBe('');
-    });
+		expect(extractTitleFromFrontMatter(content)).toBe("");
+	});
 
-    it('should handle title with special characters', () => {
-        const content = `---
+	it("should handle title with special characters", () => {
+		const content = `---
 title: "Hello & World: Special Characters!"
 ---
 
 Content here`;
-        expect(extractTitleFromFrontMatter(content)).toBe('Hello & World: Special Characters!');
-    });
+		expect(extractTitleFromFrontMatter(content)).toBe(
+			"Hello & World: Special Characters!",
+		);
+	});
 
-    it('should handle empty content', () => {
-        expect(extractTitleFromFrontMatter('')).toBe('');
-    });
+	it("should handle empty content", () => {
+		expect(extractTitleFromFrontMatter("")).toBe("");
+	});
 
-    it('should handle content without front matter', () => {
-        const content = 'Just some content without front matter';
-        expect(extractTitleFromFrontMatter(content)).toBe('');
-    });
-}); 
+	it("should handle content without front matter", () => {
+		const content = "Just some content without front matter";
+		expect(extractTitleFromFrontMatter(content)).toBe("");
+	});
+});
