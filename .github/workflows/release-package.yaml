@@ -1,4 +1,6 @@
-name: Publish Node.js Package
+name: release package
+description: >
+  This workflow publishes a new npm package.
 
 on:
   release:

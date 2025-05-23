@@ -1,4 +1,6 @@
-name: Open a PR to prepare a new Release
+name: prepare release
+description: >
+  This workflow creates a PR to update the versions in package.json and ts.
 
 on:
   workflow_dispatch:
@@ -19,7 +21,7 @@ jobs:
       - name: Update version
         run: VERSION=${{ inputs.version }} npm run prepare-release
       - name: Create a PR
-        uses: peter-evans/create-pr@v6
+        uses: peter-evans/create-pull-request@v7
         with:
           title: "[bot] release ${{ inputs.version }}"
           commit-message: "[bot] release ${{ inputs.version }}"
