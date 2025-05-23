@@ -9,6 +9,17 @@ Documentation is cloned into a temporary directory, and Markdown files are index
 
 ## Usage
 
+### Prerequisites
+
+1. Create a PAT with `read:packages` scope. [Details](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry)
+
+2. Add the following config to your `.npmrc` file.
+
+```npmrc
+@pipe-cd:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=YOUR_TOKEN
+```
+
 ### Cursor
 
 Add the following config to your mcp.json.
@@ -16,7 +27,7 @@ Add the following config to your mcp.json.
 ```json
 {
   "mcpServers": {
-    "pipe-cd.docs-mcp-server": { // Any name
+    "pipe-cd.docs-mcp-server": {
       "type": "stdio",
       "command": "npx",
       "args": [
