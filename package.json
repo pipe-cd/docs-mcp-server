@@ -10,7 +10,10 @@
     "build": "tsc",
     "start": "node dist/main.js",
     "dev": "ts-node src/main.ts",
-    "test": "jest"
+    "test": "jest",
+    "format": "biome format --write ./src",
+    "lint": "biome lint ./src",
+    "check": "biome check --write ./src"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.11.1",
@@ -25,6 +28,7 @@
     "zod": "^3.22.4"
   },
   "devDependencies": {
+    "@biomejs/biome": "1.9.4",
     "@types/express": "^4.17.21",
     "@types/jest": "^29.5.14",
     "@types/js-yaml": "^4.0.9",
