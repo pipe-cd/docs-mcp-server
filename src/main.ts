@@ -10,7 +10,7 @@ async function main() {
 	const server = new McpServer({
 		name: "PipeCDDocsSearch",
 		description: "Search PipeCD docs",
-		version: "0.0.1",
+		version: VERSION,
 	});
 
 	const docsIndexes = await loadDocsFromGitHub();

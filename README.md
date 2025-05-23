@@ -27,6 +27,8 @@ Add the following config to your mcp.json.
 }
 ```
 
+<!-- TODO: Add Claude Desktop etc. -->
+
 ## Tools
 
 ### search_docs
@@ -68,7 +70,7 @@ PipeCD follows the [CNCF Code of Conduct](https://github.com/cncf/foundation/blo
 - Bug: 
   - Please open an Issue and describe the problem. Or, open a PR with if it's easy one.
 - Enhancement / Feature Request:
-  - For small changes including typos or docs, please open a PR.
+  - For small changes including docs or adding tests, please open a PR.
   - For new features or big enhancement, basically, please open an Issue and discuss there before sending a PR. We cannot accept all requests in some cases.
 - Security issue:
   - Send an email to [the core maintainers](https://github.com/pipe-cd/pipecd/blob/master/SECURITY.md). **DO NOT report on Issues.**
