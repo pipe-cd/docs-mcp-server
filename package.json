@@ -1,6 +1,6 @@
 {
   "name": "@pipe-cd/docs-mcp-server",
-  "version": "0.0.1",
+  "version": "3.0.0",
   "description": "Local MCP server for searching PipeCD docs",
   "main": "dist/main.js",
   "bin": {
@@ -13,7 +13,9 @@
     "test": "jest",
     "format": "biome format --write ./src",
     "lint": "biome lint ./src",
-    "check": "biome check --write ./src"
+    "check": "biome check --write ./src",
+    "update-version-ts": "sed -i '' \"s/^const VERSION = .*;$/const VERSION = \\\"$VERSION\\\";/\" src/version.ts",
+    "prepare-release": "npm version $VERSION --no-git-tag-version && VERSION=$VERSION npm run update-version-ts"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.12.0",
