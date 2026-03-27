@@ -26,7 +26,7 @@ Documentation is cloned into a temporary directory, and Markdown files are index
 
 For Cursor users, you can install the MCP server with a single click using the deeplink below:
 
-[![Install MCP Server](https://cursor.com/deeplink/mcp-install-dark.svg)](cursor://anysphere.cursor-deeplink/mcp/install?name=pipe-cd.docs-mcp-server&config=eyJ0eXBlIjoic3RkaW8iLCJjb21tYW5kIjoibnB4IEBwaXBlLWNkL2RvY3MtbWNwLXNlcnZlckBsYXRlc3QifQ%3D%3D)
+<a href="cursor://anysphere.cursor-deeplink/mcp/install?name=pipe-cd.docs-mcp-server&config=eyJ0eXBlIjoic3RkaW8iLCJjb21tYW5kIjoibnB4IEBwaXBlLWNkL2RvY3MtbWNwLXNlcnZlckBsYXRlc3QifQ%3D%3D"><img src="https://cursor.com/deeplink/mcp-install-dark.svg" alt="Install MCP Server" /></a>
 
 This will automatically configure the MCP server in your Cursor settings. After clicking the link, Cursor will prompt you to install the server.
 
