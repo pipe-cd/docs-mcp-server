@@ -14,14 +14,14 @@ jobs:
   create-pr:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
         with:
           node-version: '24.x'
       - name: Update version
         run: VERSION=${{ inputs.version }} npm run prepare-release
       - name: Create a PR
-        uses: peter-evans/create-pull-request@v7
+        uses: peter-evans/create-pull-request@v8
         with:
           title: "[bot] release ${{ inputs.version }}"
           commit-message: "[bot] release ${{ inputs.version }}"
