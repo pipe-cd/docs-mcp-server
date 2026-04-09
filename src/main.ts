@@ -18,7 +18,7 @@ async function main() {
 
 	server.tool(
 		"search_docs",
-		"Executes a full-text search on PipeCD docs. Provide space-separated keywords (AND search), a starting offset, and an optional result limit.",
+		"Full-text search over PipeCD docs. Query is space-separated keywords (AND search).",
 		{
 			query: z.string(),
 			offset: z.number(),
