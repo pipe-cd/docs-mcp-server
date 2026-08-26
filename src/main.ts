@@ -18,6 +18,7 @@ async function main() {
 
 	server.tool(
 		"search_docs",
+		"Full-text search over PipeCD docs. Query is space-separated keywords (AND search).",
 		{
 			query: z.string(),
 			offset: z.number(),
@@ -45,12 +46,19 @@ async function main() {
 		},
 	);
 	// NOTE: read_docs might not be called because search_docs contains contents.
-	server.tool("read_docs", { path: z.string() }, async ({ path }) => {
-		const doc = docsIndexes.find((doc) => doc.path === path);
-		return {
-			content: [{ type: "text", text: doc?.content ?? "document not found" }],
-		};
-	});
+	server.tool(
+		"read_docs",
+		'Returns the full content of a specified PipeCD doc page. Provide the relative path of the document (after "docs/content/en/").',
+		{ path: z.string() },
+		async ({ path }) => {
+			const doc = docsIndexes.find((doc) => doc.path === path);
+			return {
+				content: [
+					{ type: "text", text: doc?.content ?? "document not found" },
+				],
+			};
+		},
+	);
 
 	// Start receiving messages on stdin and sending messages on stdout
 	const transport = new StdioServerTransport();

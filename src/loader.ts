@@ -25,7 +25,7 @@ export async function loadDocsFromGitHub(): Promise<DocFile[]> {
 	}
 
 	try {
-		console.info(`Start cloning repo ${REPO} to ${targetDir}`);
+		console.error(`Start cloning repo ${REPO} to ${targetDir}`);
 		await git.clone(REPO, targetDir, [
 			"--depth",
 			"1",
@@ -36,7 +36,7 @@ export async function loadDocsFromGitHub(): Promise<DocFile[]> {
 		]);
 		await git.cwd(targetDir);
 		await git.raw(["sparse-checkout", "set", DOCS_PATH]);
-		console.info(`Successfully cloned repo ${REPO} to ${targetDir}`);
+		console.error(`Successfully cloned repo ${REPO} to ${targetDir}`);
 	} catch (error) {
 		console.error(`Error while cloning repo ${REPO} to ${targetDir}: ${error}`);
 		throw error;
